@@ -29,9 +29,15 @@ export default function Tradutor() {
     }, [texto]);
     
     return (
-        <div>
-            <div id="container">
-                <input type="text" placeholder="Escreva Aqui para Traduzir" value={texto} onChange={pegarTexto} />
+        <div style={{fontFamily: ' "Arial", "Helvetica", "sans-serif" ', textAlign: 'center'}}>
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+                <input style={{padding: '20px', fontSize: '20px' }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = 'lightgray'}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
+                    type="text" placeholder="Escreva Aqui para Traduzir"
+                    value={texto}
+                    onChange={pegarTexto}
+                />
             </div>
             <br />
             <h1>{textoTraduzido}</h1>
