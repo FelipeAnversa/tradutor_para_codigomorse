@@ -30,7 +30,9 @@ export default function Tradutor() {
     
     return (
         <div>
-            <input type="text" placeholder="Escreva Aqui para Traduzir" value={texto} onChange={pegarTexto} />
+            <div id="container">
+                <input type="text" placeholder="Escreva Aqui para Traduzir" value={texto} onChange={pegarTexto} />
+            </div>
             <br />
             <h1>{textoTraduzido}</h1>
         </div>
@@ -39,7 +41,8 @@ export default function Tradutor() {
 
 async function traduzirTexto(texto) {
     try {
-        const API = await api.get(`/translate/morse.json?text=${texto}`);
+        const textoM = texto.replace(/ /g, "%20");
+        const API = await api.get(`/translate/morse.json?text=${textoM}`);
         const data = await API.data;
         return data;
     } catch (error) {

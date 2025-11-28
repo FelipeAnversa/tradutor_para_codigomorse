@@ -1,0 +1,20 @@
+* {
+    margin-top: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+input {
+    padding: 20px;
+    font-size: 20px;
+    &:hover {
+        background-color: lightgray;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
