@@ -1,5 +1,7 @@
 import api from "./services/api"
 import { useState , useEffect } from "react";
+import TextField from '@mui/material/TextField';
+import { Typography } from '@mui/material';
 
 export default function Tradutor() {
     const [texto, setTexto] = useState("");
@@ -30,17 +32,15 @@ export default function Tradutor() {
     
     return (
         <div style={{fontFamily: ' "Arial", "Helvetica", "sans-serif" ', textAlign: 'center'}}>
-            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-                <input style={{padding: '20px', fontSize: '20px' }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = 'lightgray'}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
-                    type="text" placeholder="Escreva Aqui para Traduzir"
+            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh'}}>
+                <TextField
+                    type="text"
+                    placeholder="Escreva Aqui para Traduzir"
                     value={texto}
                     onChange={pegarTexto}
                 />
             </div>
-            <br />
-            <h1>{textoTraduzido}</h1>
+            <Typography fontWeight= 'fontWeightBold' sx={{fontSize: 50}}>{textoTraduzido}</Typography>
         </div>
     );
 }
